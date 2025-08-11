@@ -44,8 +44,8 @@ Before you begin, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd block-launcher
+git clone https://github.com/vanascimento/besu-development-environment
+cd besu-development-environment
 ```
 
 ### 2. Start All Services
