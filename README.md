@@ -35,7 +35,7 @@ Before you begin, ensure you have the following installed:
                                  │
                     ┌─────────────────┐
                     │   Blockscout    │
-                    │   Port: 4000    │
+                    │   Port: 80      │
                     └─────────────────┘
 ```
 
@@ -66,7 +66,7 @@ This command will:
 - **Validator 2**: http://localhost:8546
 - **Validator 3**: http://localhost:8547
 - **Validator 4**: http://localhost:8548
-- **Blockscout**: http://localhost:4000
+- **Blockscout**: http://localhost:80
 
 ## 🛠️ Available Commands
 
@@ -192,7 +192,7 @@ Connect to any validator (e.g., localhost:8545) and deploy your contracts.
 
 ### 3. Monitor with Blockscout
 
-Visit http://localhost:4000 to explore transactions, blocks, and contracts.
+Visit http://localhost:80 to explore transactions, blocks, and contracts.
 
 ### 4. Stop When Done
 
@@ -259,6 +259,52 @@ If you encounter issues:
 ## 📄 License
 
 This project is licensed under the terms specified in the LICENSE file.
+
+## 🦊 MetaMask Integration
+
+To connect MetaMask to your local Besu network, follow these steps:
+
+### 1. Open MetaMask
+
+- Install [MetaMask](https://metamask.io/) if you haven't already
+- Unlock your wallet
+
+### 2. Add Custom Network
+
+- Click on the network dropdown (usually shows "Ethereum Mainnet")
+- Select "Add network" → "Add network manually"
+
+### 3. Network Configuration
+
+Fill in the following details:
+
+**Network Name**: `Besu Local Network`
+**New RPC URL**: `http://localhost:8545`
+**Chain ID**: `1337`
+**Currency Symbol**: `ETH`
+**Block Explorer URL**: `http://localhost:80`
+
+### 4. Save and Connect
+
+- Click "Save" to add the network
+- Your MetaMask will automatically switch to the new network
+
+### 5. Import Test Accounts (Optional)
+
+You can import the pre-funded validator accounts for testing:
+
+**Validator 1 Account**:
+
+- Private Key: Check `./besu-qbft-docker/keys/validator1/key`
+- Address: Check `./besu-qbft-docker/keys/validator1/key.pub`
+
+**Note**: These are development keys only. Never use them in production!
+
+### 6. Verify Connection
+
+- Check that MetaMask shows "Besu Local Network"
+- Your account should show 0 ETH initially (unless you import a validator account)
+- You can now deploy smart contracts and interact with your local blockchain
 
 ---
 
