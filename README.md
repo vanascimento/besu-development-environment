@@ -70,7 +70,7 @@ This command will:
 
 ## 🛠️ Available Commands
 
-### Service Management
+### 🚀 Service Management
 
 ```bash
 # Start all services
@@ -80,10 +80,10 @@ make start
 make stop
 
 # Restart all services
-make stop && make start
+make restart
 ```
 
-### Data Management
+### 🗑️ Data Management
 
 ```bash
 # Clear all blockchain and database data
@@ -97,12 +97,29 @@ make clear-data
 # - Stats database data
 ```
 
-### Utility Commands
+### 🎯 Utility Commands
 
 ```bash
 # Execute all tasks (clear data)
 make all
 ```
+
+## 📋 Command Reference
+
+| Command           | Icon | Description                    | Use Case                                     |
+| ----------------- | ---- | ------------------------------ | -------------------------------------------- |
+| `make start`      | 🚀   | Starts all blockchain services | Initial setup, after system restart          |
+| `make stop`       | 🛑   | Stops all running services     | When done developing, to free resources      |
+| `make restart`    | 🔄   | Restarts all services          | After configuration changes, troubleshooting |
+| `make clear-data` | 🗑️   | Clears all blockchain data     | Fresh start, reset development environment   |
+| `make all`        | 🎯   | Executes data clearing         | Quick cleanup and reset                      |
+
+### 💡 Pro Tips
+
+- **First time setup**: Use `make start` to launch everything
+- **Daily development**: Use `make restart` if you need to refresh services
+- **Complete reset**: Use `make clear-data` to start with a clean slate
+- **Resource management**: Use `make stop` when not actively developing
 
 ## 🔧 Configuration Details
 
