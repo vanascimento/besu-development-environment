@@ -100,10 +100,7 @@ make clear-data
 ### Utility Commands
 
 ```bash
-# Display hello message
-make hello-world
-
-# Execute all tasks (hello + clear data)
+# Execute all tasks (clear data)
 make all
 ```
 
@@ -204,6 +201,8 @@ make stop
 
 ```bash
 make clear-data
+# or
+make all
 ```
 
 ## 📁 Project Structure

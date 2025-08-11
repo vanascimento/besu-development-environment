@@ -9,9 +9,7 @@ clear-data:
 	rm -rf ./blockscout/services/stats-db-data/* 
 	@echo "Validator data directories cleaned successfully"
 
-# Hello world
-hello-world:
-	@echo "Hello, World!"
+
 
 # Start all services
 start:
@@ -24,5 +22,5 @@ stop:
 	cd besu-qbft-docker && docker-compose down
 
 # Execute all tasks
-all: hello-world clean-data
+all: clear-data
 	@echo "All tasks completed!"
