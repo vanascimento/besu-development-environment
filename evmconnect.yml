@@ -1,0 +1,12 @@
+confirmations:
+  required: 4 # choose the number of confirmations you require
+policyengine.simple:
+  fixedGasPrice: null
+  gasOracle:
+    mode: connector
+connectors:
+  - type: ethereum
+    server:
+      port: 5102
+    ethereum:
+      url: http://host.docker.internal:8545

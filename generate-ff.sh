@@ -1,0 +1,1 @@
+ff init ethereum dev 1 --multiparty=false -n remote-rpc --ipfs-mode private --remote-node-url http://host.docker.internal:8545 --chain-id 1337 --connector-config ./evmconnect.yml
