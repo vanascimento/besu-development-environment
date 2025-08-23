@@ -10,6 +10,47 @@ clear-data:
 	@echo "✅ Validator data directories cleaned successfully"
 compile-contract:
 	solc --combined-json abi simple_storage.sol > simple_storage_abi.json 
+
+# 🚀 Deploy modules using Hardhat Ignition
+deploy-bound:
+	@echo "🚀 Deploying Bound module to Besu network..."
+	cd smartcontracts && rm -rf ignition/deployments/
+	cd smartcontracts && npx hardhat compile
+	cd smartcontracts && npx hardhat ignition deploy ignition/modules/Bound.ts --network besu
+	@echo "✅ Bound module deployed successfully"
+
+deploy-brlt:
+	@echo "🚀 Deploying BRLT module to Besu network..."
+	cd smartcontracts && rm -rf ignition/deployments/
+	cd smartcontracts && npx hardhat compile
+	cd smartcontracts && npx hardhat ignition deploy ignition/modules/BRLT.ts --network besu
+	@echo "✅ BRLT module deployed successfully"
+
+deploy-all-modules:
+	@echo "🚀 Deploying all modules to Besu network..."
+	cd smartcontracts && rm -rf ignition/deployments/
+	cd smartcontracts && npx hardhat compile
+	cd smartcontracts && npx hardhat ignition deploy ignition/modules/Bound.ts --network besu
+	cd smartcontracts && npx hardhat ignition deploy ignition/modules/BRLT.ts --network besu
+	@echo "✅ All modules deployed successfully"
+
+# 📋 List deployed modules
+list-deployments:
+	@echo "📋 Listing Ignition deployments..."
+	cd smartcontracts && npx hardhat ignition list
+	@echo "✅ Deployments listed successfully"
+
+# 🔍 Check network status
+check-network:
+	@echo "🔍 Checking Besu network status..."
+	cd smartcontracts && npx hardhat run --network besu scripts/check-network.ts || echo "⚠️  Network check script not found, checking connection..."
+	@echo "✅ Network status checked"
+
+# 🧪 Test contracts
+test-contracts:
+	@echo "🧪 Running contract tests..."
+	cd smartcontracts && npx hardhat test
+	@echo "✅ Tests completed"
 # 🚀 Start all services
 start:
 	@echo "🚀 Starting all services..."
